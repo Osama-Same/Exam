@@ -14,7 +14,7 @@ console.log('PART 4');
 const isABalancedString = () => {
   
   for (let index = 0; index < array.length; index++) {
-    if(array[index].length < [])
+    if(array[index].length < 6)
     return true
     
   }
