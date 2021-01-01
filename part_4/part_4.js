@@ -12,7 +12,13 @@ return 'NO' if the parentheses in the input string are not balanced,.
 console.log('PART 4');
 
 const isABalancedString = () => {
-  // WRITE YOUR CODE BELOW THIS LINE
+  
+  for (let index = 0; index < array.length; index++) {
+    if(array[index].length < [])
+    return true
+    
+  }
+  return false
 };
 
 /*
