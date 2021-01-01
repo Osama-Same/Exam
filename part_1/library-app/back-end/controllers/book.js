@@ -11,7 +11,7 @@ const create = (req, res) => {
   ];
   connection.query(sqlCommand, data, (err, result, field) => {
     if (err) throw err;
-    res.json("Success create new article");
+    res.json("Success create new book1");
   });
 };
 const get = (req, res) => {
@@ -24,18 +24,18 @@ const get = (req, res) => {
 
 const getaspecificbook = (req, res) => {
   const sqlCommand = `SELECT * FROM book1 WHERE id=1 `;
-  
-  connection.query(sqlCommand, (err, result, field) => {
+  let data = [req.params.id];
+  connection.query(sqlCommand,data, (err, result, field) => {
     if (err) throw err;
-    res.json("Success change article title ");
+    res.json("Success change book1 ");
   });
 };
 const deleteaspecificbook = (req, res) => {
-  const sqlCommand = `DELETE FROM book1 WHERE id=1`;
-  
-  connection.query(sqlCommand, (err, result, field) => {
+  const sqlCommand = `DELETE FROM book1 WHERE id=?`;
+  let data = [req.params.id];
+  connection.query(sqlCommand,data, (err, result, field) => {
     if (err) throw err;
-    res.json("Success change article title ");
+    res.json("Success delete ");
   });
 };
 
