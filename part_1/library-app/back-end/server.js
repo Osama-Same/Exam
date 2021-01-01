@@ -1,8 +1,14 @@
-const express = require("express");
+const express = require('express');
+const mainRouter = require('./routes/route');
+ const cors = require('cors');
+ require('dotenv').config();
 
+const db = require('./db');
 const app = express();
 
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+ app.use(cors());
+ app.use(express.json());
+ app.use(mainRouter);
+
+const PORT = 5000 || process.env.PORT;
+app.listen(PORT, () => console.log(`SERVER ON http://localhost:${PORT}`));
